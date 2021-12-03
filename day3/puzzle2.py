@@ -18,11 +18,11 @@ def find_rating(diagnostic, rating_type):
         if frequencies[0] == frequencies[1]:
             rating_values = rating_values[np.where(rating_values[:, i] == rating_type)]
         else:
-            if rating_type == 0:
+            if rating_type == CO2_SCRUBBER:
                 rating_values = rating_values[
                     np.where(rating_values[:, i] == frequencies.argmin())
                 ]
-            elif rating_type == 1:
+            elif rating_type == OXYGEN_GENERATOR:
                 rating_values = rating_values[
                     np.where(rating_values[:, i] == frequencies.argmax())
                 ]
