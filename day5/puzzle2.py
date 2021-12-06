@@ -2,19 +2,12 @@ from collections import Counter
 
 import numpy as np
 
-import pdb; pdb.set_trace()
 
 def read_input(file):
     regex = r"(\d+),(\d+) -> (\d+),(\d+)"
     lines = np.fromregex(file, regex, np.int64)
     lines = np.reshape(lines, (lines.shape[0], 2, 2))
     return lines
-
-def is_diagonal(line):
-    # no diff
-    x_coors_difference = np.max(line[:, 0]) - np.min(line[:, 0])
-    y_coors_difference = np.max(line[:, 1]) - np.min(line[:, 1])
-    return x_coors_difference == y_coors_difference
 
 
 def find_points_covered(lines):
